@@ -1,0 +1,48 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  cursor: url('/src/images/ellipse.png');
+}
+
+/* custom designed scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 8.6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #410e0e;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #010101;
+}
+
+.contact-section {
+  background-color: #000111;
+}
+
+
+
+// .app-cursor {
+//   z-index: 1000;
+//   border-radius: 50%;
+//   width: 88px;
+//   height: 80px; 
+//   border: 1px solid black;
+//   pointer-events: none;
+//   overflow: hidden;
+//   transform: translate3d(0,0,0);
+//   position: fixed;
+// } 
