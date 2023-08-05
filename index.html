@@ -1,12 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iago Barreto - GitHub</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima&family=Rubik:wght@400;600&display=swap"
+        rel="stylesheet" />
 </head>
-<body>
-    <h1>Perfect</h1>
+
+<body class="hidden dark-theme">
+    <header class="container" id="toggle-theme">
+        <span>
+            <span id="sun-icon" class="sun-icon">&#9728;</span>
+            <span id="moon-icon" class="moon-icon">&#9790;</span>
+        </span>
+    </header>
+    <div id="game">
+        <main>
+            <div id="menu-buttons">
+                <aside id="start-game-button">
+                    <div class="main-menu flex">
+                        <button id="startGame" class="button" type="button">
+                            Start Game
+                        </button>
+                    </div>
+                </aside>
+
+                <aside id="start-tutorial-button">
+                    <div class="main-menu flex">
+                        <button id="level 1" class="button" type="button">
+                            tutorial
+                        </button>
+                    </div>
+                </aside>
+            </div>
+
+            <aside class="debug-menu" id="debug-settings-menu">
+                <h1 id="debugMenu" style="display: none;">Open debug menu</h1>
+                <aside class="settings">
+                    <h1 class="title">DEBUG</h1>
+                    <hr />
+                    <p class="title">board manipulation</p>
+                    <button id="logEmptyBoard" type="button">
+                        Log Board
+                    </button>
+                    <button id="clearBoard" type="button">
+                        Clear Board
+                    </button>
+                    <button id="renderBoardButton" type="button">
+                        <!-- Show initial Board / Update Visualization -->
+                        Render Board
+                    </button>
+                    <button id="populateGame" type="button">
+                        Populate Board (Random)
+                    </button>
+                    <hr />
+                    <p class="title">game logic</p>
+                    <button id="attemptWin" type="button">
+                        Attempt Win Condition
+                    </button>
+                    <button id="hack" type="button">Hack board</button>
+                    <hr />
+                    <p class="title">interactions</p>
+                    <button id="swap-elements" type="button">
+                        Static Swap Elements
+                    </button>
+                </aside>
+            </aside>
+
+            <!-- Game Board 'Canvas' -->
+            <aside class="game-container">
+                <h4 id="timer">00:00</h4>
+                <h4 class="congratulations" id="congratulations-h4">
+                    Parabéns! Você venceu!
+                </h4>
+                <p class="congratulations" id="congratulations-p">
+                    Compartilhe com amigos e <br />veja se eles conseguem superar seu
+                    recorde!
+                    <a class="whatsapp-share-link" id="whatsappLink" href="" target="_blank">Link
+                        <img class="whatsapp-ico"
+                            src="https://cdn.icon-icons.com/icons2/1584/PNG/512/3721678-whatsapp_108065.png"
+                            alt="whatsapp" />
+                    </a>
+                </p>
+
+                <div id="board"></div>
+            </aside>
+        </main>
+    </div>
+    <!-- <script src="src/index.js"></script> -->
+    <script>
+        // only display body once the page is fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.remove("hidden");
+        });
+    </script>
 </body>
+
 </html>

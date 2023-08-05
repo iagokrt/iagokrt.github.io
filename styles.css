@@ -1,0 +1,296 @@
+* {
+    /* font-family: 'Belanosima', sans-serif; */
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #5b8fb9;
+}
+
+body.hidden {
+    visibility: hidden;
+}
+
+main {
+    display: flex;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 15px;
+    /* font-size: 1.5rem; */
+    font-size: 0.8rem;
+}
+
+button:hover {
+    transform: scale(1.02);
+    transition: all 0.25s linear;
+    background: #fff;
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+.button {
+    border-radius: 9px;
+    color: #0f0e0e;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+}
+
+/** debug menu **/
+.debug-menu {
+    position: absolute;
+    transform: scale(0.8);
+    top: 0;
+    left: 0;
+}
+
+h1#debugMenu {
+    color: white;
+    background-color: #BB4242;
+    text-align: center;
+    border-radius: 8px;
+    padding: 14px 6px;
+    font-size: 12px;
+}
+
+h1#debugMenu:hover {
+    cursor: pointer;
+}
+
+.settings {
+    display: none;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.settings.show-settings {
+    display: block;
+}
+
+.settings .title {
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+
+    padding: 4px 12px;
+}
+
+
+/* Game */
+#startGame:hover {
+    background-color: #D3D3D3;
+    box-shadow: 0 0 20px rgba(66, 165, 245, 1);
+}
+
+
+.congratulations {
+    text-align: center;
+    color: #fff;
+}
+
+#congratulations-h4,
+#congratulations-p {
+    display: none;
+}
+
+.whatsapp-share-link {
+    color: #f1f1f1;
+}
+
+.whatsapp-ico {
+    width: 16px;
+    height: 16px;
+}
+
+/* game board */
+#board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000111;
+    padding: 14px;
+}
+
+table td {
+    padding: 18px;
+    background: #b8d6d6;
+    color: #000;
+}
+
+table td:hover {
+    background: linear-gradient(to bottom, #5DC6C6, #30A7A7);
+    cursor: pointer;
+    transform: scale(1.08);
+    transition: all 0.2s linear;
+}
+
+table td.selected {
+    background: linear-gradient(to bottom, #5DC6C6, #30A7A7);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.2s linear;
+    animation: floating 2s infinite;
+
+    /* 2 seconds duration, infinite loop */
+}
+
+table * {
+    padding: 14px;
+}
+
+/* CSS for the floating animation - selected item */
+@keyframes floating {
+    0% {
+        transform: scale(1);
+        /* Normal size */
+    }
+
+    50% {
+        transform: scale(1.09);
+        /* Slightly scaled up */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Back to normal size */
+    }
+}
+
+/* game clock  */
+#timer {
+    display: none;
+    text-align: center;
+}
+
+/* theme definitions */
+
+/* Define styles for the elements in the dark theme */
+body.dark-theme {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+body.dark-theme table td {
+    background-color: #135874;
+    color: #fff;
+}
+
+body.dark-theme table td.selected,
+body.dark-theme table td:hover {
+    background: linear-gradient(to bottom, #0b2043, #0b2e39);
+}
+
+body.dark-theme #startGame {
+    background: #011f4b;
+    color: #fff;
+}
+
+body.dark-theme #startGame:hover {
+    box-shadow: 0 0 18px rgba(66, 92, 245, 1);
+
+}
+
+/* Theme Slider  */
+#toggle-theme {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+}
+
+#sun-icon:hover,
+#moon-icon:hover {
+    cursor: pointer;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 5px;
+    background: #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Sun and moon icon styles */
+.slider-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.sun-icon,
+.moon-icon {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.moon-icon {
+    display: none;
+}
+
+/* Display the moon icon in the dark theme */
+body.dark-theme .sun-icon {
+    display: none;
+}
+
+body.dark-theme .moon-icon {
+    display: inline;
+}
